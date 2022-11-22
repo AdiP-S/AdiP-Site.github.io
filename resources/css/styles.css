@@ -1,3 +1,8 @@
+/* Root Styles */
+:root {
+    --text-color: #E3DCD2;
+    --back-color: #cc8b65;
+}
 html {
     width: 100%;
     margin: 0;
@@ -8,7 +13,7 @@ a{
     text-decoration: none;
 }
 h1, h2, h3, h4, h5, p, li, a{
-    color: #E3DCD2;
+    color: var(--text-color);
 }
 
 /* Navigation Bar */
@@ -19,7 +24,7 @@ header{
     top: 0px;
     z-index: 10;
     padding: 0px 50px;
-    width: 90%;
+    width: 91%;
 }
 nav {
     display: flex;
@@ -55,8 +60,14 @@ nav .logo{
 }
 
 /* Main body */
+body {
+    margin: 0px;
+    width: 100%;
+    min-height: 80%;
+    overflow-x: hidden;
+}
     /* Side Element */
-.side{
+.side-left{
     width: 40px;
     position: fixed;
     bottom: 0px;
@@ -64,7 +75,7 @@ nav .logo{
     right: auto;
     z-index: 10;
 }
-.side ul{
+.side-left ul{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,20 +83,105 @@ nav .logo{
     padding: 0px;
     list-style: none;
 }
-.side ul li{
+.side-left ul li{
     padding: 10px 0;
 }
-.side ul li:last-of-type{
+.side-left ul li:last-of-type{
     margin-bottom: 20px;
 }
-.side ul li a{
-    color: #cc8b65;
+.side-left ul li a{
+    color: var(--back-color);
 }
-.side ul::after{
+.side-left ul::after{
     content: "";
     display: block;
     width: 1px;
     height: 90px;
     margin: 0 auto;
-    background-color: #cc8b65;
+    background-color: var(--back-color);
+}
+.side-right{
+    width: 40px;
+    position: fixed;
+    bottom: 0px;
+    left: auto;
+    right: 40px;
+    z-index: 10;
+}
+.random{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.random::after{
+    content: "";
+    display: block;
+    width: 1px;
+    height: 90px;
+    margin: 0 auto;
+    background-color: var(--back-color);
+}
+#circle {
+    /* (A) SAME WIDTH & HEIGHT - SQUARE */
+    width: 50px;
+    height: 50px;
+    margin: 25px;
+   
+    /* (B) 50% RADIUS = CIRCLE */
+    border-radius: 50%;
+   
+    /* (C) BACKGROUND COLOR */
+    background-color: var(--back-color);
+}
+#circle-txt {
+    /* (E1) CENTER TEXT IN CIRCLE */
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 32px;
+    margin-left: 5px;
+    font-size: 10px;
+  }
+#circle:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+  /* About Section */
+main {
+    margin: 0px auto;
+    width: 70%;
+    max-width: 1600px;
+    min-height: 100vh;
+    padding: 200px 150px;
+}
+.fill{
+    padding: 0 150px;
+}
+section {
+    margin-top: 0px auto;
+    padding: 100px 0px;
+    max-width: 1000px;
+}
+.general{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 0px;
+    line-height: 0;
+}
+.general h1{
+    font-size: 50px;
+    
+}
+.general h2{
+    font-size: 30px;
+}
+.general p{
+    margin: 20px 0px 0px;
+    max-width: 540px;
+    line-height: 1;
 }
